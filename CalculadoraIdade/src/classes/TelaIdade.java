@@ -38,7 +38,7 @@ public class TelaIdade extends javax.swing.JFrame {
 
         jLabel1.setText("Ano de Nascimento");
 
-        txtAno.setModel(new javax.swing.SpinnerNumberModel(1900, 1500, 2020, 1));
+        txtAno.setModel(new javax.swing.SpinnerNumberModel(1998, 1500, 2020, 1));
 
         jLabel2.setText("Idade:");
 
