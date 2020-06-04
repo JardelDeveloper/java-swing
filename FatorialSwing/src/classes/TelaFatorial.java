@@ -16,6 +16,7 @@ public class TelaFatorial extends javax.swing.JFrame {
      */
     public TelaFatorial() {
         initComponents();
+        panResolucao.setVisible(false);
     }
 
     /**
@@ -31,6 +32,9 @@ public class TelaFatorial extends javax.swing.JFrame {
         txtN = new javax.swing.JSpinner();
         lblFatorial = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        panResolucao = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lblConta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,35 +55,62 @@ public class TelaFatorial extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/fatorial.png"))); // NOI18N
 
+        jLabel2.setText("Resolução:");
+
+        javax.swing.GroupLayout panResolucaoLayout = new javax.swing.GroupLayout(panResolucao);
+        panResolucao.setLayout(panResolucaoLayout);
+        panResolucaoLayout.setHorizontalGroup(
+            panResolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblConta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panResolucaoLayout.createSequentialGroup()
+                .addGap(143, 143, 143)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panResolucaoLayout.setVerticalGroup(
+            panResolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panResolucaoLayout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblConta, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(jLabel3)
+                .addContainerGap(129, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panResolucao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
                         .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblFatorial))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(jLabel3)))
-                .addContainerGap(139, Short.MAX_VALUE))
+                        .addComponent(lblFatorial)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
+                .addGap(19, 19, 19)
                 .addComponent(jLabel3)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblFatorial))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panResolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -90,12 +121,21 @@ public class TelaFatorial extends javax.swing.JFrame {
         int n = Integer.parseInt(txtN.getValue().toString());
         int fatorial = 1;
         int contador = n;
+        String formula = "";
 
         while (contador >= 1) {
             fatorial *= contador;
-            contador--;
+            if (contador == 1) {
+                formula += (contador);
+                contador--;
+            } else {
+                formula += (contador + " x ");
+                contador--;
+            }
         }
         lblFatorial.setText(Integer.toString(fatorial));
+        lblConta.setText(formula);
+        panResolucao.setVisible(true);
     }//GEN-LAST:event_txtNStateChanged
 
     /**
@@ -135,8 +175,11 @@ public class TelaFatorial extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lblConta;
     private javax.swing.JLabel lblFatorial;
+    private javax.swing.JPanel panResolucao;
     private javax.swing.JSpinner txtN;
     // End of variables declaration//GEN-END:variables
 }

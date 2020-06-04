@@ -42,7 +42,7 @@ public class IdadeAtual extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtAno.setModel(new javax.swing.SpinnerNumberModel(1900, 1500, 2020, 1));
+        txtAno.setModel(new javax.swing.SpinnerNumberModel(1998, 1500, 2020, 1));
 
         jLabel2.setText("Idade:");
 

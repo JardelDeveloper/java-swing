@@ -120,7 +120,7 @@ public class TelaIdade extends javax.swing.JFrame {
         int anoAtual = LocalDate.now().getYear();
         int ano = Integer.parseInt(txtAno.getText());
         int idade = anoAtual - ano;
-        lblIdade.setText(Integer.toString(idade));
+        lblIdade.setText(Integer.toString(idade)+ " anos");
         //String situacao = ((idade>=16 && idade<18) || (idade>70))?"O seu voto é opcional":"O seu voto é obrigatório";
         //lblSituacao.setText(situacao);
         if (idade < 16){

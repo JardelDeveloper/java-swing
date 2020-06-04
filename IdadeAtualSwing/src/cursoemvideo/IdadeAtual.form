@@ -83,7 +83,7 @@
     <Component class="javax.swing.JSpinner" name="txtAno">
       <Properties>
         <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-          <SpinnerModel initial="1900" maximum="2020" minimum="1500" numberType="java.lang.Integer" stepSize="1" type="number"/>
+          <SpinnerModel initial="1998" maximum="2020" minimum="1500" numberType="java.lang.Integer" stepSize="1" type="number"/>
         </Property>
       </Properties>
     </Component>
