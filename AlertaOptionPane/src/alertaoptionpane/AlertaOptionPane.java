@@ -18,6 +18,11 @@ public class AlertaOptionPane {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int n, s = 0;
+        do {
+            n = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe um número"));
+        s += n;
+        } while(n != 0);
         JOptionPane.showMessageDialog(null, "<html><span style='color: red';><u>Olá Mundo!</u></span></html>", "Teste", JOptionPane.ERROR_MESSAGE);
     }
     
